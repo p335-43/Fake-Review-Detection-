@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #FF5F6D, #FFC371); /* Sweet Morning Gradient */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #5C4B51; /* A deep mauve color */
+        }
+        form {
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #FFC371; /* Border color to match the gradient */
+            border-radius: 5px;
+            box-sizing: border-box; /* Makes sure the padding doesn't affect the overall width */
+            margin-bottom: 20px;
+            height: 100px;
+        }
+        button {
+            background-color: #FF5F6D; /* Pink shade of the gradient */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+        button:hover {
+            background-color: #E04D67; /* A darker shade for hover state */
+        }
+        .prediction {
+            background-color: #FFF3E9; /* A soft peach background */
+            color: #5C4B51; /* Text color for readability */
+            padding: 10px;
+            border-left: 5px solid #FFC371; /* Thick border on the left */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Review Detection System</h1>
+        <form action="/" method="post">
+            <label for="review">Enter your review:</label>
+            <textarea id="review" name="review" placeholder="Type your review here..."></textarea>
+            <button type="submit">Classify Review</button>
+        </form>
+        {% if prediction %}
+        <div class="prediction">
+            <h2>The review is predicted as: {{ prediction }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
